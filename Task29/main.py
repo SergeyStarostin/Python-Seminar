@@ -6,10 +6,10 @@
 Никто из ребят не смог до конца сделать это задание. Они решили так: у кого будет меньше ошибок в коде,
 тот и выиграл спор. За помощью товарищи обратились к Вам, студентам.
 '''
-number = 1
+number = int(input('Введите число: '))
 max_number = -1
 while number != 0:
-    number = int(input('Введите число: '))
     if number > max_number:
         max_number = number
-print(max_number if max_number != 0 else 'Вы ни чего не ввели')
+    number = int(input('Введите число: '))
+print(max_number if max_number != -1 else 'Вы ни чего не ввели')
