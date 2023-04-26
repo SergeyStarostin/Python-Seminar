@@ -6,8 +6,8 @@ Input: 2 -> 3 4
 Output: 4 3
 '''
 number_N = int(input('Введите число: '))
-def return_list(number_N):
+def revers_list(number_N: int) -> str: #функция возвращает строчное значение
     if number_N == 0:
-        return "Нет последовательности"
-    return str(number_N) + ' ' + return_list(number_N - 1)
-print(return_list(number_N))
+        return ''
+    return f'{number_N} ' + revers_list(number_N - 1)
+print(revers_list(number_N))
