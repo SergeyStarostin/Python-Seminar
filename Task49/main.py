@@ -9,7 +9,7 @@
 в два шага: сначала вычислить самую большую площадь эллипса, а затем найти и сам эллипс, имеющий такую площадь.
 Гарантируется, что самая далекая планета ровно одна
 '''
-
+import random
 def generate_sequence_of_orbits(count_of_orbits: int)->list[tuple[int, int]]:
     result = [(random.randint(1, 10), random.randint(1, 10)) for _ in range(count_of_orbits)]
     return result
