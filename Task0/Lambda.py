@@ -16,3 +16,5 @@ print('Список чисел: ', data := [1, 2, 3, 5, 8, 15, 23, 38])
 result = select(int, data)
 
 print('Список четных чисел: ', result := where(lambda x: x % 2 == 0, result))
+
+print('Список четных чисел: ', result := list(select(lambda x: (x, x ** 2), result)))
