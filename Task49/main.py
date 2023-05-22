@@ -10,14 +10,13 @@
 Гарантируется, что самая далекая планета ровно одна
 '''
 import random
-def generate_sequence_of_orbits(count_of_orbits: int)->list[tuple[int, int]]:
-    result = [(random.randint(1, 10), random.randint(1, 10)) for _ in range(count_of_orbits)]
-    return result
-def find_farthest_orbit(list_of_orbits: list[tuple[int, int]]) -> tuple[int, int]:
-    squares = [(i, e[0]*e[1]) for i, e in enumerate(list_of_orbits) if e[0] != e[1]]
-    max_square = max(squares, key=lambda x: x[1])
-    return list_of_orbits[max_square[0]]
+from math import pi
 
-orbits = generate_sequence_of_orbits(10)
-print(orbits)
-print(find_farthest_orbit(orbits))
+number = int(input('Введите количество планет: \t'))
+orbits = [(random.randint(1, 10), random.randint(1, 10)) for _ in range(number)]
+print(f'Список орбит:  {orbits}')
+
+eleps_square = lambda rad: pi * rad[0] * rad[1]
+orbits_square = [eleps_square(orbits[i]) for i in range(len(orbits))]
+
+print(orbits[max([(value, index) for index, value in enumerate(orbits_square) if orbits[index][0] != orbits[index][1]])[1]])
